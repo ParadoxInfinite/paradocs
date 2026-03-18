@@ -6,7 +6,9 @@ editor:
 branding:
   title: ParaDocs
   label: v1.0
-theme: dark
+start:
+  # Try the Retype Pro features
+  pro: true
 links:
 - text: GitHub
   link: https://github.com/ParadoxInfinite/

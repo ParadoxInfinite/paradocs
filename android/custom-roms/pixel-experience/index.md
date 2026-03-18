@@ -12,13 +12,13 @@ image: https://descargas.ams3.digitaloceanspaces.com/images/710/ux9-ux10-theme-p
 ---
 # PixelExperience
 
-![](https://gizblog.it/wp-content/uploads/2019/02/pixel-experience-banner-1024x576.jpg)
+![|450](https://gizblog.it/wp-content/uploads/2019/02/pixel-experience-banner-1024x576.jpg)
 
 <br/>
 Installing PE (12.1 and above) on Redmi K20 Pro/Xiaomi Mi 9T Pro (raphael/raphaelin)
 <br/><br/>
 
-#### 1. Downloads
+## Downloads
 - **ROM**:<br/>Download links for raphael can be found here: [PixelExperience site](https://download.pixelexperience.org/raphael)
 
 - **Latest firmware**:<br/>Download respective latest firmware from here:<br/>
@@ -41,7 +41,7 @@ Installing PE (12.1 and above) on Redmi K20 Pro/Xiaomi Mi 9T Pro (raphael/raphae
     [!file Direct download](https://github.com/ParadoxInfinite/paradocs/releases/download/ofox-recovery-fbev2/Ofox-R11.1_1-FBEv2.zip)
     +++
 
-#### 2. Instructions
+## Instructions
 
 !!!danger Disclaimer
 **Make a NAND backup**, and only continue if you know what you are doing. I am not responsible for anything that happens to you/your device.
@@ -51,28 +51,29 @@ Installing PE (12.1 and above) on Redmi K20 Pro/Xiaomi Mi 9T Pro (raphael/raphae
 Assuming ADB and fastboot are installed. Following commands are in linux format, might have to make some changes for Windows/Mac, YMMV.
 !!!
 
-- **Getting to fastboot/recovery**:
-    1. Connect your phone to PC with USB debugging enabled.
-    2. In a terminal, run: `adb reboot bootloader` and this will bring you to the fastboot menu.
-    3. Now run: `fastboot boot twrp-3.7.0_9-0-raphael.img`<br/>(the twrp file name will be the file you downloaded from Step 1)
-    4. Once in TWRP, (if your storage isn't mounted, mount it and then) transfer your `Ofox-R11.1_1-FBEv2.zip` file onto your storage.
-    5. Flash the OFox recovery and the phone will auto reboot to OFox recovery.
-<br/><br/>
+### Getting to fastboot/recovery
+>>>Connect your phone to PC with USB debugging enabled.
+>>>In a terminal, run: `adb reboot bootloader` and this will bring you to the fastboot menu.
+>>>Now run: `fastboot boot twrp-3.7.0_9-0-raphael.img` (the twrp file name will be the file you downloaded from [Downloads](#downloads))
+>>>Once in TWRP, (if your storage isn't mounted, mount it and then) transfer your `Ofox-R11.1_1-FBEv2.zip` file onto your storage.
+>>>Flash the OFox recovery and the phone will auto reboot to OFox recovery.
+>>>
 
-- **Flashing firmware (Optional, but recommended)**:
-    1. Transfer the firmware file you downloaded onto the storage and flash it.
-<br/><br/>
+### Flashing firmware (Optional, but recommended)
+Transfer the firmware file you downloaded onto the storage and flash it.
 
-- **Format/Wipe before install**:
-    1. Click on the trash/garbage bin at the bottom of OFox to get to the Wipe menu.
-    2. In the `Wipe tab`, select/tick **only** `Cache` and `Data` options and Wipe them.
-    3. Now in the `Format Data` tab, type 'yes' and format.
+### Format/Wipe before install
+>>>Click on the trash/garbage bin at the bottom of OFox to get to the Wipe menu.
+>>>In the `Wipe tab`, select/tick **only** `Cache` and `Data` options and Wipe them.
+>>>Now in the `Format Data` tab, type 'yes' and format.
+>>>
 
-- **Flash PixelExperience**:
-    1. Transfer the PixelExperience zip file onto your storage.
-    2. Flash the PixelExperience zip.
-    3. (Optional, **NOT Recommended**) You can flash a DFE zip to remain decrypted, but I would strongly advice against it, unless you have the need to be decrypted and understand the risks of it.
-    4. Reboot to System and you should now be booting PixelExperience successfully.
+### Flash PixelExperience
+>>>Transfer the PixelExperience zip file onto your storage.
+>>>Flash the PixelExperience zip.
+>>>(Optional, **NOT Recommended**) You can flash a DFE zip to remain decrypted, but I would strongly advice against it, unless you have the need to be decrypted and understand the risks of it.
+>>>Reboot to System and you should now be booting PixelExperience successfully.
+>>>
 
 !!!info
 Incase you get stuck even after these steps, do checkout the [Telegram group](https://t.me/peraphaelofficial) for raphael PE and seek help there. Be nice and respectful when asking for help.
@@ -80,4 +81,4 @@ Incase you get stuck even after these steps, do checkout the [Telegram group](ht
 
 Enjoy the ROM, cheers!
 
-![](/imgs/congration.jpg)
+![|350](/imgs/congration.jpg)
