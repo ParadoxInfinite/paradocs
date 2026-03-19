@@ -4,7 +4,7 @@ author:
     avatar: /paradox.jpg
     email: s.samarthkulkarni@gmail.com
     link: https://github.com/ParadoxInfinite/
-date: 2026-03-18T23:54
+date: 2026-03-19T11:03
 title: Basics of Neural Networks
 categories: [neural-networks, ai, machine learning, data structures]
 description: Notes for the future about the basics of neural networks 
