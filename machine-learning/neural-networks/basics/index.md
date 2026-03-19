@@ -52,6 +52,6 @@ The vectors in Physics are similar in concept, but the understanding is very dif
 !!!
 In Physics, a vector is defined as a value that has both magnitude and direction. In computer science/math/machine learning, a vector is a list/array of ***ordered*** values (values = magnitude, order = direction).
 
-Vector DBs are something I'll have to look into soon, since they can be quite effective here.
+Vector DBs are something I'll have to look into soon, since they are quite effective here.
 
 For now, this is all. I'll update more here (if it is suitable, or if not I'll create a different page as I learn more)
