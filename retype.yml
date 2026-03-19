@@ -9,6 +9,13 @@ branding:
 start:
   # Try the Retype Pro features
   pro: true
+lastUpdated:
+  date:
+    enabled: true
+    source: committer
+  by:
+    enabled: true
+    source: committer
 links:
 - text: GitHub
   link: https://github.com/ParadoxInfinite/
