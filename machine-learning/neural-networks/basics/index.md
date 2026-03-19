@@ -19,14 +19,16 @@ Most of these notes are derived/written after watching and understanding [3Blue1
 
 ### Actuation value
 Any data point will have some value that makes it active or inactive. There are multiple ways to find this value, notably:
-1. Sigmoid function: It is an increasing value from 0 to 1. It works on the basis where >0.5 is active and <=0.5 is inactive.
-    !!!
-    This supposedly contributes to slower learning rates in models. Hence ReLU is the preferred function. 
-    !!!
+>>>Sigmoid function
+It is an increasing value from 0 to 1. It works on the basis where >0.5 is active and <=0.5 is inactive.
+!!!
+This supposedly contributes to slower learning rates in models. Hence ReLU is the preferred function. 
+!!!
 ![|500](/imgs/sigmoid-function.png)
-2. ReLU (Rectified Linear Unit): It is a flat value until 0 and then increasing after (basically `max(0, activation_value)`). This is only active when the value is >0, anything <=0 is considered inactive.
-<br/>
+>>>ReLU (Rectified Linear Unit)
+It is a flat value until 0 and then increasing after, basically `max(0, activation_value)`. This is only active when the value is >0, anything <=0 is considered inactive.
 ![|500](/imgs/relu-function.png)
+>>>
 
 ### Weights
 
