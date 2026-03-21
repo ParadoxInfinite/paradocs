@@ -34,7 +34,7 @@ It is a flat value until 0 and then increasing after, basically `max(0, activati
 
 Neural networks are comprised of multiple layers (input -> N hidden layers -> output), there are a number of neurons in each of these layers. Each neuron in each layer has a weight associated with it so that the model can be finetuned to get the optimal result. Weights represent the significance of whatever attribute that layer's neuron is representing.
 
-## Bias
+### Bias
 Bias is a value similar to weights but it is more subtractive than additive. Instead of highlighting the significance, bias introduces the difference until which the activation should be ignored. Example: For a sigmoid function, the bias can be -0.03 (anything >-0.03 can be considered active), or for a ReLU function, the bias can be 0.4 (Any value <0.4 will be considered inactive). This in conjunction with weights allow for greater finetuning.
 
 ### Actuation value calculation
@@ -42,7 +42,7 @@ Down the layers of neural network, you need to calculate a value between 0-1 for
 $$
 \displaystyle a^{(n)}_{1...n} = Sigmoid/ReLU of (\left( \sum_{m=0, n=0}^{m,n} w_{m,n} \right) + \left( \sum{a^{(n-1)}_{0...n-1}} \right) \left( \sum_{n=0}^n b_n \right)
 \\\\[2ex]
-Where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards \\
+where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards \\
 \sum_{m=0, n=0}^{m,n} w_{m,n} = The\: weight\: of\: each\: neuron\: in\: each\: layer \\
 \sum{a^{(n-1)}_{0...n-1}} = The\: actuation\: value\: from\: the\: previous\: layer\: (starts\: from\: layer\: 0) \\
 \sum_{n=0}^n b_n = The\: bias\: added\: to\: each\: neuron\: in\: each\: layer
@@ -57,3 +57,20 @@ In Physics, a vector is defined as a value that has both magnitude and direction
 Vector DBs are something I'll have to look into soon, since they are quite effective here.
 
 For now, this is all. I'll update more here (if it is suitable, or if not I'll create a different page as I learn more)
+
+---
+
+Continuing to learn more, I've come across a few new topics that were somewhat familiar but still a but hazy/unclear to me.
+
+### Cost function
+It's a function that helps the network back propogate and fix weights so it achieves clarity and accuracy in the answelrs it provides. If a network is "confused" (providing multiple 'highly rated' answers to a classification problem) or if it is highly inaccurate, cost function helps tune the weights by providing the cost of the network.
+
+The forumla to calculate the cost of a network is
+$$
+\displaystyle Cost =  \sum_{n=1}^n \left( a_n-e_n \right)^2\\\
+where \\
+a = actuation\: value\\
+e = expected\: value (ideal\: value\: =\: 1\: for\: expected\: output)
+$$
+
+This is taken across the final layer and used to find the adjustments to make for back-propogation.
