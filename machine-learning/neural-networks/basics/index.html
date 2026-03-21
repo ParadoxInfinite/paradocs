@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/paradocs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827215058060">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.3.0.827402803063">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.3.0">
@@ -42,11 +42,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=4.3.0.827215058060" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.3.0.827402803063" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827215058060" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.3.0.827402803063" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.3.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827215058060" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.3.0.827402803063" data-turbo-eval="false" defer></script>
     <link href="../../../resources/css/katex.css?v=4.3.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=4.3.0" defer></script>
 </head>
@@ -280,13 +280,13 @@
 </doc-steps>
 <h3 id="weights">Weights</h3>
 <p>Neural networks are comprised of multiple layers (input -&gt; N hidden layers -&gt; output), there are a number of neurons in each of these layers. Each neuron in each layer has a weight associated with it so that the model can be finetuned to get the optimal result. Weights represent the significance of whatever attribute that layer&#x27;s neuron is representing.</p>
-<h2 id="bias">Bias</h2>
+<h3 id="bias">Bias</h3>
 <p>Bias is a value similar to weights but it is more subtractive than additive. Instead of highlighting the significance, bias introduces the difference until which the activation should be ignored. Example: For a sigmoid function, the bias can be -0.03 (anything &gt;-0.03 can be considered active), or for a ReLU function, the bias can be 0.4 (Any value &lt;0.4 will be considered inactive). This in conjunction with weights allow for greater finetuning.</p>
 <h3 id="actuation-value-calculation">Actuation value calculation</h3>
 <p>Down the layers of neural network, you need to calculate a value between 0-1 for the neuron to hold, so, the function that the neuron uses to compute this value from all the previous inputs is:</p>
 <div class="math"><pre translate="no">\displaystyle a^{(n)}_{1...n} = Sigmoid/ReLU of (\left( \sum_{m=0, n=0}^{m,n} w_{m,n} \right) + \left( \sum{a^{(n-1)}_{0...n-1}} \right) \left( \sum_{n=0}^n b_n \right)
 \\\\[2ex]
-Where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards \\
+where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards \\
 \sum_{m=0, n=0}^{m,n} w_{m,n} = The\: weight\: of\: each\: neuron\: in\: each\: layer \\
 \sum{a^{(n-1)}_{0...n-1}} = The\: actuation\: value\: from\: the\: previous\: layer\: (starts\: from\: layer\: 0) \\
 \sum_{n=0}^n b_n = The\: bias\: added\: to\: each\: neuron\: in\: each\: layer</pre></div>
@@ -311,11 +311,21 @@ Where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards 
 <p>In Physics, a vector is defined as a value that has both magnitude and direction. In computer science/math/machine learning, a vector is a list/array of <em><strong>ordered</strong></em> values (values = magnitude, order = direction).</p>
 <p>Vector DBs are something I&#x27;ll have to look into soon, since they are quite effective here.</p>
 <p>For now, this is all. I&#x27;ll update more here (if it is suitable, or if not I&#x27;ll create a different page as I learn more)</p>
+<hr>
+<p>Continuing to learn more, I&#x27;ve come across a few new topics that were somewhat familiar but still a but hazy/unclear to me.</p>
+<h3 id="cost-function">Cost function</h3>
+<p>It&#x27;s a function that helps the network back propogate and fix weights so it achieves clarity and accuracy in the answelrs it provides. If a network is &quot;confused&quot; (providing multiple &#x27;highly rated&#x27; answers to a classification problem) or if it is highly inaccurate, cost function helps tune the weights by providing the cost of the network.</p>
+<p>The forumla to calculate the cost of a network is</p>
+<div class="math"><pre translate="no">\displaystyle Cost =  \sum_{n=1}^n \left( a_n-e_n \right)^2\\\
+where \\
+a = actuation\: value\\
+e = expected\: value (ideal\: value\: =\: 1\: for\: expected\: output)</pre></div>
+<p>This is taken across the final layer and used to find the adjustments to make for back-propogation.</p>
 
                 <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">
                 
-                    <time id="retype-last-updated" class="text-sm whitespace-nowrap text-base-text-muted ml-auto" datetime="2026-03-19T11:09:04" title="2026-03-19" data-absolute-label="Last updated on 2026-03-19 by ParadoxInfinite" data-absolute-label-html="Last updated on 2026-03-19 by ParadoxInfinite" data-relative-template="Last updated {0} by {1}" data-relative-template-html="Last updated RETYPETEMPLATELASTUPDATEDVALUETOKEN by RETYPETEMPLATELASTUPDATEDAUTHORTOKEN" data-last-updated-by="ParadoxInfinite">
-                        Last updated on 2026-03-19 by ParadoxInfinite
+                    <time id="retype-last-updated" class="text-sm whitespace-nowrap text-base-text-muted ml-auto" datetime="2026-03-21T15:21:55" title="2026-03-21" data-absolute-label="Last updated on 2026-03-21 by ParadoxInfinite" data-absolute-label-html="Last updated on 2026-03-21 by ParadoxInfinite" data-relative-template="Last updated {0} by {1}" data-relative-template-html="Last updated RETYPETEMPLATELASTUPDATEDVALUETOKEN by RETYPETEMPLATELASTUPDATEDAUTHORTOKEN" data-last-updated-by="ParadoxInfinite">
+                        Last updated on 2026-03-21 by ParadoxInfinite
                     </time>
                 </div>
 
@@ -326,7 +336,7 @@ Where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards 
             
                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                     <div class="w-1/2">
-                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../aws/instance-scheduler/">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../aws/instance-scheduler/">
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
@@ -336,6 +346,13 @@ Where \\ a^{(n)}_{1...n} = The\: actuation\: value\: from\: layer\: 1\: onwards 
                     </div>
             
                     <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../math/basics/trigonometry/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">Trigonometric Functions</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
                     </div>
                 </nav>
             </footer>
